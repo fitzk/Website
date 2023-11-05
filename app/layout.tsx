@@ -1,5 +1,7 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
+import Nav from "@/app/nav";
 import Providers from "./providers";
 import type { Metadata } from "next";
 
@@ -7,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Kayla Codes",
-  description: "",
+  description: "Software Developer",
 };
 
 export default function RootLayout({
@@ -18,7 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Nav />
+          {children}
+          <Analytics />
+        </Providers>
       </body>
     </html>
   );

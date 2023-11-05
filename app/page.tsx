@@ -1,13 +1,15 @@
-import Image from "next/image";
-import Nav from "@/app/nav";
-import Contributions from './contributions.png'
+"use client";
+import { Image } from "@nextui-org/react";
 
 export default function Home() {
   return (
     <>
-      <Nav />
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <Image width={800} height={800} alt="contributions" src={Contributions}></Image>
+      <main className="flex min-h-screen flex-col items-center justify-between p-10">
+        <Image
+          alt="github contributions"
+          src="contributions.png"
+          width={1000}
+        />
       </main>
     </>
   );
