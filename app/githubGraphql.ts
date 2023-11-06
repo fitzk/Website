@@ -4,7 +4,7 @@ import { type GraphQlQueryResponseData } from "@octokit/graphql/dist-types/types
 // personal access token can only be used to fetch public github data
 const githubGraphqlClient = graphql.defaults({
   headers: {
-    authorization: `token ${process.env.githubPublicAccessToken}`,
+    authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
   },
 });
 
