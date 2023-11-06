@@ -8,8 +8,8 @@ import type { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kayla Codes",
   description: "Software Developer",
+  title: "Kayla Codes",
 };
 
 export default function RootLayout({
