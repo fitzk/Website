@@ -1,15 +1,17 @@
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import Nav from "@/app/nav";
 import Providers from "./providers";
 import type { Metadata } from "next";
-
+import React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   description: "Software Developer",
   title: "Kayla Fitzsimmons",
+  icons: [
+    { url: './icon.svg', rel: 'icon', type: 'image/svg+xml'}
+  ]
 };
 
 export default function RootLayout({
@@ -17,17 +19,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+ 
   return (
-    <html lang="en">
-      <body
-        className={`darker text-primary bg-background ${inter.className}`}
-      >
+    <html className={inter.className} suppressHydrationWarning lang="en">
+        <body className="bg-background text-foreground">
+
         <Providers>
-          <Nav />
+        <Nav />
+
+
           {children}
-          <Analytics />
-        </Providers>
-      </body>
+          </Providers>
+
+        </body>
     </html>
   );
 }

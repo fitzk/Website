@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 const { nextui } = require("@nextui-org/react");
 
-const colors =   {
+const colors = {
   prussian_blue: {
     DEFAULT: "#002642",
     100: "#00080d",
@@ -71,30 +71,39 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {},
-  },
-  darkMode: "class",
+  darkMode: 'class',
   plugins: [
     nextui({
       themes: {
-        darker: {
-          extend: "dark",
+        'dark-theme': {
+          extends: 'dark',
           colors: {
-            ...colors,
-            background: colors.prussian_blue.DEFAULT,
-            foreground: colors.prussian_blue[300],
+        
+            background: colors.prussian_blue,
+            blue: colors.prussian_blue,
+            foreground: colors.flax,
+            green: colors.reseda_green,
+            orange: colors.atomic_tangerine,
+            pink: colors.bittersweet,
+            yellow: colors.flax,
             primary: colors.flax,
-            secondary: colors.reseda_green,
-            focus: "#F182F6",
-            dark: "#000000"
+            secondary: colors.atomic_tangerine,
+            content1: colors.prussian_blue[200],
           },
-          textColor: {
-            primary: colors.prussian_blue,
-            dark: "#000000"
-
-          }
         },
+        'light-theme': {
+          extends: 'light',
+          colors: {
+            background: '#fff',
+            blue: colors.prussian_blue,
+            foreground: colors.prussian_blue[200],
+            green: colors.reseda_green,
+            orange: colors.atomic_tangerine,
+            pink: colors.bittersweet,
+            yellow: colors.flax,
+            primary: colors.prussian_blue.DEFAULT,
+          },
+        }
       },
     }),
     require("tailwindcss-animated"),

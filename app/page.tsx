@@ -14,14 +14,18 @@ export default function Home() {
     link.click();
     document.body.removeChild(link);
   }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8">
-      <section>
-        <h1>Kayla Fitzsimmons</h1>
-        <h2>Frontend leaning fullstack developer</h2>
-      </section>
-      <Button className="text-dark" color='primary' onClick={onClick}>Resume</Button>
+    <section className="flex min-h-screen flex-col items-center justify-between p-8">
+      <Button
+        color="secondary"
+        variant="bordered"
+        className="text-bold text-secondary"
+        onClick={onClick}
+      >
+        View Resume
+      </Button>
       <Image alt="github contributions" src="contributions.png" width={1000} />
-    </main>
+    </section>
   );
 }
