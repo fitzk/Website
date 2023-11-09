@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import {
-  Chip,
   Link,
   Navbar,
   NavbarBrand,
@@ -89,12 +88,12 @@ export default function Nav() {
               src: user?.avatarUrl,
             }}
             classNames={{
-              base: ["text-sm", "font-mono", ],
+              base: ["text-sm", "font-mono"],
               wrapper: ["flex", "flex-col-reverse", "justify-items-center"],
             }}
             description={
               <div className="text-lg m-0 font-semibold font-sans text-secondary">
-                Hi I'm Kayla
+               {`Hi I'm Kayla`}
               </div>
             }
             name="Software Developer"
