@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { queryUserMetrics } from "./githubGraphql";
+import { queryUserMetrics } from "../lib/data/githubGraphql";
 
 interface UserMetricsQueryResponseData {
   avatarUrl: string;
