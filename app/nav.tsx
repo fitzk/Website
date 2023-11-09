@@ -13,13 +13,11 @@ import {
   User,
 } from "@nextui-org/react";
 import { useSharedContext } from "./context";
-import PageHeader from "./navBrand";
-import ThemeSwitcher from "./themeChanger";
 
 function GithubLink() {
   return (
     <Link className="flex" href="https://github.com/fitzk" target="_blank">
-      <svg className="text-primary" height={24} viewBox="0 0 24 24" width={24}>
+      <svg className="text-secondary w-8 h-8" viewBox="0 0 24 24">
         <path
           clipRule="evenodd"
           d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
@@ -40,13 +38,11 @@ function LinkedInLink() {
       target="_blank"
     >
       <svg
-        className="text-primary"
+        className="text-secondary w-8 h-8"
         fill="currentColor"
-        height={24}
         stroke="currentColor"
         strokeWidth="0"
         viewBox="0 0 1024 1024"
-        width={24}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -61,7 +57,7 @@ function LinkedInLink() {
 
 function HomeLink() {
   return (
-    <Link className="hidden md:flex" color="primary" href="#" size="md">
+    <Link className="hidden md:flex" color="primary" href="#" size="lg">
       Home
     </Link>
   );
@@ -71,20 +67,21 @@ export default function Nav() {
   const { user } = useSharedContext();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
-    <Navbar className="bg-inherit p-1" onMenuOpenChange={setIsMenuOpen}>
-      <ThemeSwitcher />
-
+    <Navbar
+      maxWidth="2xl"
+      classNames={{ base: "md:p-2" }}
+      onMenuOpenChange={setIsMenuOpen}
+    >
       {/* gap-4 is default for ul but it moves the avatar to the right ~1rem too far */}
-      <NavbarContent className="gap-0">
-        <NavbarItem>
+      <NavbarContent>
+        <NavbarItem className="md:hidden">
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden mr-3"
+            className="mr-3"
           />
         </NavbarItem>
         <NavbarBrand>
-          <PageHeader />
-          {/* <User
+          <User
             avatarProps={{
               className: "mr-3",
               isBordered: true,
@@ -92,38 +89,25 @@ export default function Nav() {
               src: user?.avatarUrl,
             }}
             classNames={{
-              base: ["text-sm", "font-mono"],
+              base: ["text-sm", "font-mono", ],
               wrapper: ["flex", "flex-col-reverse", "justify-items-center"],
             }}
             description={
-              <div className="text-lg m-0 font-semibold font-sans text-white">
-                Kayla Fitzsimmons
+              <div className="text-lg m-0 font-semibold font-sans text-secondary">
+                Hi I'm Kayla
               </div>
             }
             name="Software Developer"
-          /> */}
+          />
         </NavbarBrand>
-      </NavbarContent>
-      <NavbarContent justify="center">
-        <NavbarItem>
-          <Chip
-            classNames={{
-              base: "hidden sm:flex bg-gradient-to-br from-[#9368B7] to-[#FF705A] delay-150 animate-jump animate-twice",
-              content: "drop-shadow shadow-black text-white",
-            }}
-            variant="shadow"
-          >
-            Open to Work
-          </Chip>
-        </NavbarItem>
       </NavbarContent>
       <NavbarContent
         className="hidden sm:flex align-items-center justify-content-center"
         justify="end"
       >
-        <NavbarItem>
+        {/* <NavbarItem>
           <HomeLink />
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem>
           <GithubLink />
         </NavbarItem>

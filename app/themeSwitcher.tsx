@@ -15,15 +15,15 @@ export default function ThemeSwitcher() {
   if (!mounted) return null;
 
   return (
-    <div>
-      <button onClick={() => setTheme("light-theme")}>
+    <div className="flex p-2 fixed bottom-0">
+      <button className="mr-1" onClick={() => setTheme("light-theme")}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          className={`w-7 h-7 ${theme === 'light-theme' ? 'text-pink': 'text-inherit'}`}
           fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          strokeWidth={1.5}
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             strokeLinecap="round"
@@ -34,12 +34,12 @@ export default function ThemeSwitcher() {
       </button>
       <button onClick={() => setTheme("dark-theme")}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          className={`w-6 h-6 ${theme === 'dark-theme' ? 'text-pink': 'text-inherit'}`}
           fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          strokeWidth={1.5}
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             strokeLinecap="round"

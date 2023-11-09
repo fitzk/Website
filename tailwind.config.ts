@@ -71,14 +71,14 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   plugins: [
     nextui({
       themes: {
-        'dark-theme': {
-          extends: 'dark',
+        "dark-theme": {
+          extends: "dark",
           colors: {
-        
+            light: "#fff",
             background: colors.prussian_blue,
             blue: colors.prussian_blue,
             foreground: colors.flax,
@@ -88,22 +88,26 @@ const config: Config = {
             yellow: colors.flax,
             primary: colors.flax,
             secondary: colors.atomic_tangerine,
-            content1: colors.prussian_blue[200],
+            ternary: colors.bittersweet,
+            content1: colors.prussian_blue[300],
           },
         },
-        'light-theme': {
-          extends: 'light',
+        "light-theme": {
+          extends: "light",
           colors: {
-            background: '#fff',
+            background: "#fff",
             blue: colors.prussian_blue,
-            foreground: colors.prussian_blue[200],
+            foreground: colors.prussian_blue[400],
             green: colors.reseda_green,
             orange: colors.atomic_tangerine,
             pink: colors.bittersweet,
             yellow: colors.flax,
-            primary: colors.prussian_blue.DEFAULT,
+            primary: colors.prussian_blue,
+            secondary: "#8236D3",
+            ternary: colors.bittersweet,
+            content1: colors.prussian_blue[900],
           },
-        }
+        },
       },
     }),
     require("tailwindcss-animated"),
