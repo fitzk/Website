@@ -20,14 +20,15 @@ export default function Home() {
     <section className="flex min-h-screen flex-col items-center justify-start">
       <Banner />
       <Button
+        className="bg-gradient-to-br from-pink to-secondary text-background text-lg delay-150 animate-jump animate-twice"
         endContent={
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
             className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
@@ -36,7 +37,6 @@ export default function Home() {
             />
           </svg>
         }
-        className="bg-gradient-to-br from-pink to-secondary text-background text-lg delay-150 animate-jump animate-twice"
         onClick={onClick}
       >
         Resume

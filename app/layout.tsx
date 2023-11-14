@@ -1,16 +1,17 @@
-import "@/lib/globals.css";
-import { Inter } from "next/font/google";
 import Nav from "@/app/nav";
-import Providers from "./providers";
+import "@/lib/globals.css";
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import React from "react";
+import Providers from "./providers";
 import ThemeSwitcher from "./themeSwitcher";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   description: "Software Developer",
+  icons: [{ rel: "icon", type: "image/svg+xml", url: "./icon.svg" }],
   title: "Kayla Fitzsimmons",
-  icons: [{ url: "./icon.svg", rel: "icon", type: "image/svg+xml" }],
 };
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={inter.className} suppressHydrationWarning lang="en">
+    <html className={inter.className} lang="en" suppressHydrationWarning>
       <body className="bg-background text-foreground">
         <Providers>
           <Nav />
