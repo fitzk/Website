@@ -73,12 +73,10 @@ export default function Nav() {
     >
       {/* gap-4 is default for ul but it moves the avatar to the right ~1rem too far */}
       <NavbarContent>
-        <NavbarItem className="md:hidden">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="mr-3"
-          />
-        </NavbarItem>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="mr-3 md:hidden"
+        />
         <NavbarBrand>
           <User
             avatarProps={{
@@ -93,7 +91,7 @@ export default function Nav() {
             }}
             description={
               <div className="text-lg m-0 font-semibold font-sans text-secondary">
-               {`Hi I'm Kayla`}
+                {`Hi I'm Kayla`}
               </div>
             }
             name="Software Developer"
